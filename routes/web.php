@@ -17,16 +17,23 @@ use App\Http\Controllers\PostController;
 |
 */
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 
-Route::get("/posts/home", [PostController::class, "index"]);
+Route::get("/posts/index", [PostController::class, "index"])->name('post.index');
+Route::get("/posts/create", [PostController::class, "create"])->name('post.create');
+Route::post("/posts", [PostController::class, "store"])->name('post.store');
+
+Route::get('/posts/{post}/edit', [PostController::class, "edit"])->name('post.edit');
+Route::put('/posts/{post}', [PostController::class, "update"])->name('post.update');
+Route::get("/posts/{post}", [PostController::class, "show"])->name('post.show');
+Route::delete("/posts/{post}", [PostController::class, "delete"])->name('post.delete');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
