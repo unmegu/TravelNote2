@@ -1,16 +1,12 @@
 <script setup>
- import Authenticated from '@/Layouts/AuthenticatedLayout.vue'
  import { router } from '@inertiajs/vue3'
  import { Link } from '@inertiajs/vue3'
 
 </script>
 <template>
-   <Authenticated>
-       <template #header>
-           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-               Travel Note App
-           </h2>
-       </template>
+       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+           Travel Note App
+       </h2>
 
        <div class="w-3/4 mx-auto mt-8">
            <h1 class="font-bold text-3xl text-grey-800">Travel Note App へようこそ</h1>
@@ -22,9 +18,8 @@
            </div>
            
            <div>
-               <Link href="/login" method="post" as="button">使ってみる</Link>
+               <Link href="/login" method="get" as="button">使ってみる</Link>
            </div>
        </div>
-   </Authenticated>
 
 </template>

@@ -13,6 +13,7 @@ class PostController extends Controller
 {
     public function intro(Post $post)
     {
+        // dd("intro");
         return inertia("Post/Intro");
     }
     

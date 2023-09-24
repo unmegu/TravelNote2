@@ -14,6 +14,8 @@ use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
 
+use Illuminate\Support\Facades\Redirect; //login後の遷移のために追加
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -46,7 +48,8 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+       return redirect(RouteServiceProvider::HOME);
+      //dd("post.index he no ridirect jikko");
+        //return Redirect::route('posts.index');
     }
 }
