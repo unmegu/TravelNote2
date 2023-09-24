@@ -71,6 +71,16 @@ const submit = () => {
                     <span class="ml-2 text-sm text-gray-600">Remember me</span>
                 </label>
             </div>
+            
+            <!--regesterへの画面遷移を追加-->
+            <div class="block mt-4">
+                <Link
+                    :href="route('register')"
+                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                    まだアカウントを持っていない方はこちら
+                </Link>
+            </div>
 
             <div class="flex items-center justify-end mt-4">
                 <Link

@@ -4,10 +4,7 @@
 
 </script>
 <template>
-       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-           Travel Note App
-       </h2>
-
+    <!--TODO：中央ぞろえにする-->
        <div class="w-3/4 mx-auto mt-8">
            <h1 class="font-bold text-3xl text-grey-800">Travel Note App へようこそ</h1>
 
