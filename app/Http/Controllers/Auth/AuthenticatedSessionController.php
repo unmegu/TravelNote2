@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
 
+use Illuminate\Support\Facades\Redirect; //login後の遷移のために追加
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -34,7 +36,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        //return redirect()->intended(RouteServiceProvider::HOME);
+        return Redirect::route('post.index');
     }
 
     /**
@@ -47,7 +50,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
-        return redirect('/');
+         //return redirect('/');
+         return Redirect::route('post.intro');
     }
 }
