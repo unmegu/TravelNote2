@@ -17,14 +17,16 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+
+Route::get('/', [PostController::class, "intro"])->name('post.intro');
 
 Route::get("/posts/index", [PostController::class, "index"])->name('post.index');
 Route::get("/posts/create", [PostController::class, "create"])->name('post.create');

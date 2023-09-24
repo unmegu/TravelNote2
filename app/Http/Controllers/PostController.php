@@ -11,8 +11,15 @@ use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
+    public function intro(Post $post)
+    {
+        return inertia("Post/Intro");
+    }
+    
+    
     public function index(Post $post)
     {
+        /*web.php->controller->(model)->view(front)*/
         return inertia("Post/Index",["posts" => $post->get()]);
     }
     
