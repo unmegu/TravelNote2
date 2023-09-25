@@ -3,6 +3,7 @@
  import { Link } from '@inertiajs/vue3'
 
 </script>
+
 <template>
     <!--TODO：中央ぞろえにする-->
        <div class="w-3/4 mx-auto mt-8">

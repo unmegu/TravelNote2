@@ -48,8 +48,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-       return redirect(RouteServiceProvider::HOME);
-      //dd("post.index he no ridirect jikko");
-        //return Redirect::route('posts.index');
+       //return redirect(RouteServiceProvider::HOME);
+        return Redirect::route('post.index');
     }
 }

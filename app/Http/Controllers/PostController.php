@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index(Post $post)
     {
         /*web.php->controller->(model)->view(front)*/
-        return inertia("Post/Index",["posts" => $post->get()]);
+        return inertia("Post/Index",["posts" => $post->get(), "google_key"=>config('services.google_map.token'),]);
     }
     
     public function show(Post $post)
