@@ -19,9 +19,9 @@ class UserSeeder extends Seeder
     {
          DB::table('users')->insert([
                 'name' => 'unno',
-                'email' => 'g2123011@gmail.com',
+                'email' => 'sssss@gmail.com',
                 'email_verified_at' => new DateTime(), 
-                'password' => 'PJ94Torn',
+                'password' => '11111111',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
          ]);
