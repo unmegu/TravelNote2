@@ -5,6 +5,7 @@
   const form = useForm({
       title: "",
       body: "",
+     // file: null,
   })
 
 </script>
@@ -16,7 +17,7 @@
             </h2>
       </template>
 
-      <div class="mt-12 mx-auto w-1/4 p-6 bg-cyan-100 border-2 border-gray-200 flex-col rounded">
+      <div class="mt-12 mx-auto w-3/4 p-6 bg-cyan-100 border-2 border-gray-200 flex-col rounded">
           <form @submit.prevent="form.post(route('post.store'))" enctype="multipart/form-data">
               <!-- title-->
               <div class="m-5">
@@ -27,6 +28,7 @@
               
               <!--画像投稿機能-->
               <div class="image">
+                <label for="image">スポットの写真:</label>
                 <input type="file" name="image">
               </div>
               

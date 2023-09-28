@@ -15,12 +15,16 @@
             </h2>
         </template>
 
-        <div class="w-1/4 mx-auto mt-8 space-y-4">
+        <div class="w-3/4 mx-auto mt-8 space-y-4">
          
             <div>
                 <h1>{{ post.title }}</h1>
                 <p>{{ post.created_at }}</p>
            </div>
+           
+            <div v-if="post.image_url">
+                <img src="post.image_url" alt="画像が読み込めません。"/>
+            </div>
 
             <div>
                 <h3>本文</h3>
