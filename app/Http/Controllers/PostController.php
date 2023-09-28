@@ -9,6 +9,8 @@ use App\Http\Requests\PostRequest;
 use App\Http\Requests\ImageRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
+use Cloudinary;  
+
 
 class PostController extends Controller
 {
@@ -39,6 +41,13 @@ class PostController extends Controller
     public function store(PostRequest $request, Post $post)
     {
         $input = $request->all();
+        if($request->file('image')){
+            dd("store");
+            //cloudinaryへ画像を送信し、画像のURLを$image_urlに代入している
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            dd($image_url);  //画像のURLを画面に表示
+            $input += ['image_url' => $image_url]; 
+        }
         $input += ['user_id' => $request->user()->id];    
         $post->fill($input)->save();
         return Redirect::route('post.show', $post->id);

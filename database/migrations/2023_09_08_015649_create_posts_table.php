@@ -18,11 +18,12 @@ return new class extends Migration
             $table->string('title', 50);
             $table->string('body', 200);
             $table->boolean('status')->nullable();
-            $table->string('latitude',10)->nullable();
-            $table->string('longitude',10)->nullable();
+            $table->double('latitude',9,7)->nullable();
+            $table->double('longitude',10,7)->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');   
             $table->timestamps();
             $table->softDeletes();
+            $table->string('image_url')->nullable(); 
         });
     }
 
