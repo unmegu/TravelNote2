@@ -38,6 +38,10 @@ class PostController extends Controller
     //use Redirect;
     public function store(PostRequest $request, Post $post)
     {
+         //cloudinaryへ画像を送信し、画像のURLを$image_urlに代入している
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        dd($image_url);  //画像のURLを画面に表示
+        
         $input = $request->all();
         $input += ['user_id' => $request->user()->id];    
         $post->fill($input)->save();
