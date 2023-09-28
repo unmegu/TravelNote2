@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use App\Http\Requests\ImageRequest;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -21,7 +22,7 @@ class PostController extends Controller
     public function index(Post $post)
     {
         /*web.php->controller->(model)->view(front)*/
-        return inertia("Post/Index",["posts" => $post->get(), "google_key"=>config('services.google_map.token'),]);
+        return inertia("Post/Index",["posts" => Auth::user()->posts()->get(), "google_key"=>config('services.google_map.token'),]);
     }
     
     public function show(Post $post)
