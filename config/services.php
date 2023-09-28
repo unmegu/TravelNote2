@@ -32,6 +32,6 @@ return [
     ],
     
     'google_map' => [
-        'token' => env('GOOGLE_ACCESS_KEY')
+        'token' => env('VITE_GOOGLE_ACCESS_KEY')
     ],
 ];
