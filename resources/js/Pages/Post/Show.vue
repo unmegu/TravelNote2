@@ -19,12 +19,16 @@
          
             <div>
                 <h1>{{ post.title }}</h1>
-                <p>{{ post.created_at }}</p>
+                <!--投稿日は表記方法を考えて追加するか検討-->
+                <!--<p>{{ post.created_at }}</p>-->
            </div>
            
-            <div v-if="post.image_url">
-                <img src="post.image_url" alt="画像が読み込めません。"/>
-            </div>
+            <a href="#">
+                <!--<div v-if="post.image_url">-->
+                <div>
+                    <img :src="post.image_url" alt="画像が読み込めません。"/>
+                </div>
+            </a>
 
             <div>
                 <h3>本文</h3>

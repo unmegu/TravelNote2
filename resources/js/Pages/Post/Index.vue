@@ -24,25 +24,13 @@
     loader.load().then((google) => {
     console.log( import.meta.env.VITE_GOOGLE_ACCESS_KEY)
     // const { Map } = google.maps.importLibrary("maps");
-
+    /*TODO: centerを位置情報に修正*/
     const hogehoge = new google.maps.Map(document.getElementById("map"), { //←下のdivクラスのidを指したい．
         center: { lat:35.660838968038846, lng: 139.69518336849038 },
         zoom: 8,
       });
 });
 })
-
-// let map;
-
-// async function initMap() {
-//   const { Map } = await google.maps.importLibrary("maps");
-
-//   map = new Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 8,
-//   });
-// }
-// onMounted(()=>{initMap()})
 </script>
 
 
@@ -66,10 +54,8 @@
                    
                      <div class="w-3/4 max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                         <a href="#">
-                                      
-                            <!--<div v-if="post.image_url">-->
                             <div>
-                                <img src="post.image_url" alt="画像が読み込めません。"/>
+                                <img :src="post.image_url" alt="画像が読み込めません。"/>
                             </div>
                         </a>
                         <div class="p-5">

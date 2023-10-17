@@ -42,10 +42,9 @@ class PostController extends Controller
     {
         $input = $request->all();
         if($request->file('image')){
-            dd("store");
+            //dd($request->file('image'));
             //cloudinaryへ画像を送信し、画像のURLを$image_urlに代入している
             $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-            dd($image_url);  //画像のURLを画面に表示
             $input += ['image_url' => $image_url]; 
         }
         $input += ['user_id' => $request->user()->id];    
