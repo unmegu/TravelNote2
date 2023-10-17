@@ -5,8 +5,14 @@
   const form = useForm({
       title: "",
       body: "",
-     // file: null,
+      image: null,
   })
+  
+  function setImage(event){
+    //console.log(event);
+    form.image = event.target.files[0]
+    //console.log(form.image);
+  }
 
 </script>
 <template>
@@ -29,7 +35,7 @@
               <!--画像投稿機能-->
               <div class="image">
                 <label for="image">スポットの写真:</label>
-                <input type="file" name="image">
+                <input type="file" @change="setImage" name="image">
               </div>
               
               <!-- body -->
